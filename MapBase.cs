@@ -287,13 +287,13 @@ namespace MapControl
         public Location ViewportPointToLocation(Point point)
         {
             var p = this.viewportTransform.Inverse.Transform(point);
-            return this.mapTransform.Transform(new Helix.CoreTypes.Point(p.X, p.Y));
+            return this.mapTransform.Transform(new Nutron.CoreTypes.Point(p.X, p.Y));
         }
 
         /// <summary>
         /// Transforms a viewport coordinates point to a geographic location.
         /// </summary>
-        public Location ViewportPointToLocation(Helix.CoreTypes.Point point)
+        public Location ViewportPointToLocation(Nutron.CoreTypes.Point point)
         {
             return ViewportPointToLocation(point.ToSystemPoint());
         }
@@ -402,7 +402,7 @@ namespace MapControl
                 var latZoom = Math.Log(latScale, 2d);
 
                 this.TargetZoomLevel = Math.Min(lonZoom, latZoom);
-                this.TargetCenter = this.mapTransform.Transform(new Helix.CoreTypes.Point((p1.X + p2.X) / 2d, (p1.Y + p2.Y) / 2d));
+                this.TargetCenter = this.mapTransform.Transform(new Nutron.CoreTypes.Point((p1.X + p2.X) / 2d, (p1.Y + p2.Y) / 2d));
                 this.TargetHeading = 0d;
             }
         }
@@ -557,9 +557,9 @@ namespace MapControl
         private void InternalSetValue(DependencyProperty property, object value)
         {
             {
-                if (value is Helix.CoreTypes.Point)
+                if (value is Nutron.CoreTypes.Point)
                 {
-                    value = ((Helix.CoreTypes.Point)value).ToSystemPoint();
+                    value = ((Nutron.CoreTypes.Point)value).ToSystemPoint();
                 }
             }
 

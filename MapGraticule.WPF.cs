@@ -48,8 +48,8 @@ namespace MapControl
             if (this.ParentMap != null)
             {
                 var bounds = this.ParentMap.ViewportTransform.Inverse.TransformBounds(new Rect(this.ParentMap.RenderSize));
-                var start = this.ParentMap.MapTransform.Transform(new Helix.CoreTypes.Point(bounds.X, bounds.Y));
-                var end = this.ParentMap.MapTransform.Transform(new Helix.CoreTypes.Point(bounds.X + bounds.Width, bounds.Y + bounds.Height));
+                var start = this.ParentMap.MapTransform.Transform(new Nutron.CoreTypes.Point(bounds.X, bounds.Y));
+                var end = this.ParentMap.MapTransform.Transform(new Nutron.CoreTypes.Point(bounds.X + bounds.Width, bounds.Y + bounds.Height));
                 var minSpacing = this.MinLineSpacing * 360d / (Math.Pow(2d, this.ParentMap.ZoomLevel) * TileSource.TileSize);
                 var spacing = LineSpacings[LineSpacings.Length - 1];
 

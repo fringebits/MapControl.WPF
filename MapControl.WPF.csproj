@@ -12,7 +12,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\Libraries\Helix.MapCore\Helix.MapCore.csproj" />
+        <ProjectReference Include="..\..\Libraries\Nutron.CoreMap\Nutron.CoreMap.csproj" />
         <ProjectReference Include="..\SimpleLogger\SimpleLogger\SimpleLogger.csproj" />
     </ItemGroup>
 
